@@ -590,15 +590,48 @@
       return;
     }
     
-    document.body.style.overflow = 'hidden'; // lock scroll
+    document.body.style.overflow = 'hidden';
 
     var counter = document.getElementById('preloader-counter');
     var progress = document.getElementById('preloader-progress');
+    var terminal = document.getElementById('preloader-terminal');
+    var brand = document.getElementById('preloader-brand');
     
+    // Fake terminal logs
+    var logs = [
+      "> INITIALIZING CORE SYSTEMS...",
+      "> LOADING MODULES [██████░░░░]",
+      "> ESTABLISHING SECURE CONNECTION...",
+      "> BYPASSING MAINFRAME ENCRYPTION...",
+      "> ASSETS LOADED SUCCESSFULLY."
+    ];
+    var logInterval = setInterval(function() {
+      if (logs.length > 0) {
+        var el = document.createElement('div');
+        el.innerText = logs.shift();
+        terminal.appendChild(el);
+      } else {
+        clearInterval(logInterval);
+      }
+    }, 250);
+
+    // Text scramble decode
+    var chars = '!<>-_\\/[]{}—=+*^?#_';
+    var originalText = 'ACC DIGITAL';
+    var iterations = 0;
+    var brandInterval = setInterval(function() {
+      brand.innerText = originalText.split('').map(function(letter, index) {
+        if (index < iterations) return originalText[index];
+        return chars[Math.floor(Math.random() * chars.length)];
+      }).join('');
+      if (iterations >= originalText.length) clearInterval(brandInterval);
+      iterations += 1 / 3;
+    }, 40);
+
     var progressObj = { value: 0 };
     gsap.to(progressObj, {
       value: 100,
-      duration: 1.5,
+      duration: 2.0, // SLIGHTLY LONGER FOR EFFECT
       ease: 'power2.inOut',
       onUpdate: function() {
         var val = Math.round(progressObj.value);
@@ -611,7 +644,7 @@
           yPercent: -100,
           duration: 0.8,
           ease: 'power3.inOut',
-          onComplete: function() { document.body.style.overflow = ''; } // unlock scroll
+          onComplete: function() { preloader.style.display = 'none'; document.body.style.overflow = ''; }
         })
         .to(['.hero-eyebrow', '.hero-title', '.hero-rule', '.hero-actions'], {
           opacity: 1,

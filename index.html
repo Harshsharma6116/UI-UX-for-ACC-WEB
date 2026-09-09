@@ -8,18 +8,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=23">
+<link rel="stylesheet" href="styles.css?v=24">
 </head>
 <body>
 
 <!-- PRELOADER -->
 <div id="preloader" class="preloader">
-  <div class="preloader-logo-wrap">
-    <img src="https://avatars.githubusercontent.com/u/53072438?v=4" alt="ACC Logo" class="preloader-logo" />
-  </div>
-  <div class="preloader-bottom">
-    <div class="preloader-bar"><div class="preloader-progress" id="preloader-progress"></div></div>
-    <div class="preloader-counter" id="preloader-counter">0%</div>
+  <div class="preloader-inner">
+    <div class="preloader-terminal" id="preloader-terminal"></div>
+    <div class="preloader-logo-wrap">
+      <img src="https://avatars.githubusercontent.com/u/53072438?v=4" alt="ACC Logo" class="preloader-logo" />
+      <div class="preloader-brand" id="preloader-brand">ACC DIGITAL</div>
+    </div>
+    <div class="preloader-bottom">
+      <div class="preloader-bar"><div class="preloader-progress" id="preloader-progress"></div></div>
+      <div class="preloader-footer">
+        <span class="preloader-sys">SYS.BOOT_SEQ</span>
+        <div class="preloader-counter" id="preloader-counter">0%</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -412,6 +419,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="data.js"></script>
-<script src="script.js?v=23"></script>
+<script src="script.js?v=24"></script>
 </body>
 </html>
