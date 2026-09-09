@@ -955,4 +955,4 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   .hero { padding-top: 64px; }
   .hero-eyebrow { font-size: 12px; }
 }
-@media (max-width: 768px) { .project-row { flex-direction: column; align-items: flex-start; gap: var(--space-4); } .project-mobile-img { display: block; } .project-row-inner { display: flex; align-items: baseline; gap: var(--space-4); width: 100%; flex-wrap: wrap; } }
+@media (max-width: 768px) { .project-row { flex-wrap: wrap; gap: var(--space-4); } .project-mobile-img { display: block; order: 99; } .project-title-large { flex-basis: 100%; order: -1; font-size: 32px; } }
