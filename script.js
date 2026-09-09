@@ -92,9 +92,10 @@
 
   /* ============ EVENTS TABS ============ */
   function initEventsTabs() {
-    var tabs = document.querySelectorAll('.events-tab');
+    var tabs = document.querySelectorAll('.events-tab:not(.skip-btn)');
     var tracks = document.querySelectorAll('.events-track');
     var sticker = document.getElementById('hacker-sticker');
+    var skipBtn = document.getElementById('skip-past-btn');
     if (!tabs.length || !tracks.length) return;
 
     var observer = new IntersectionObserver(function(entries) {
@@ -110,6 +111,19 @@
               t.setAttribute('aria-selected', 'true');
             }
           });
+
+          // Show skip button only for 'past' events
+          if (skipBtn) {
+            if (targetId === 'past') {
+              skipBtn.style.opacity = '1';
+              skipBtn.style.transform = 'translateX(0)';
+              skipBtn.style.pointerEvents = 'auto';
+            } else {
+              skipBtn.style.opacity = '0';
+              skipBtn.style.transform = 'translateX(20px)';
+              skipBtn.style.pointerEvents = 'none';
+            }
+          }
 
           if (sticker) {
             var labels = { 'ongoing': 'HAPPENING', 'upcoming': 'NEXT UP', 'past': 'ARCHIVE' };
