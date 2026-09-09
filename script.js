@@ -515,7 +515,14 @@
     if (projectsList) {
       projectsList.innerHTML = ACC_DATA.projects.map(function(p, i) {
         var num = (i + 1).toString().padStart(2, '0');
-        return '<div class="project-row" data-img="' + p.img + '"><span class="project-num">' + num + '</span><h3 class="project-title-large">' + p.title + '</h3><span class="project-tag-large">' + p.tag + '</span></div>';
+        return '<div class="project-row" data-img="' + p.img + '">' +
+                 '<div class="project-row-inner">' +
+                   '<span class="project-num">' + num + '</span>' +
+                   '<h3 class="project-title-large">' + p.title + '</h3>' +
+                   '<span class="project-tag-large">' + p.tag + '</span>' +
+                 '</div>' +
+                 '<img src="' + p.img + '" class="project-mobile-img" alt="' + p.title + '">' +
+               '</div>';
       }).join('');
     }
 
