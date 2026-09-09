@@ -252,11 +252,11 @@
             <button class="events-tab" data-tab="upcoming" role="tab" aria-selected="false">Upcoming</button>
             <button class="events-tab" data-tab="past" role="tab" aria-selected="false">Past</button>
           </div>
-          <div style="display: flex; gap: 12px; align-items: center;">
-            <button class="events-tab skip-btn" id="skip-past-btn" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})" style="opacity: 0; transform: translateX(20px); pointer-events: none; transition: all 0.3s var(--ease); border: 1px solid var(--border); color: var(--text-secondary); background: var(--surface);">SKIP ⤓</button>
-            <div class="hacker-sticker" id="hacker-sticker" data-text="HAPPENING">HAPPENING</div>
-          </div>
+          <div class="hacker-sticker" id="hacker-sticker" data-text="HAPPENING">HAPPENING</div>
         </div>
+      </div>
+
+      <button class="skip-btn" id="skip-past-btn" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})" style="position: fixed; bottom: 24px; right: 24px; z-index: 999; opacity: 0; transform: translateY(20px); pointer-events: none; transition: all 0.3s var(--ease); border: 1px solid var(--primary); color: var(--bg); background: var(--primary); padding: 12px 24px; border-radius: 999px; font-family: var(--font-mono); font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 20px rgba(0, 255, 65, 0.3);">SKIP ARCHIVE ⤓</button>
       </div>
 
       <div class="events-track" id="events-ongoing" role="region" aria-label="Ongoing Events">

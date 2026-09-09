@@ -116,11 +116,11 @@
           if (skipBtn) {
             if (targetId === 'past') {
               skipBtn.style.opacity = '1';
-              skipBtn.style.transform = 'translateX(0)';
+              skipBtn.style.transform = 'translateY(0)';
               skipBtn.style.pointerEvents = 'auto';
             } else {
               skipBtn.style.opacity = '0';
-              skipBtn.style.transform = 'translateX(20px)';
+              skipBtn.style.transform = 'translateY(20px)';
               skipBtn.style.pointerEvents = 'none';
             }
           }
