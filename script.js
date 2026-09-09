@@ -143,6 +143,13 @@
               }, 30);
             }
           }
+        } else {
+          // If past events track leaves viewport completely
+          if (entry.target.id === 'events-past' && skipBtn) {
+            skipBtn.style.opacity = '0';
+            skipBtn.style.transform = 'translateY(20px)';
+            skipBtn.style.pointerEvents = 'none';
+          }
         }
       });
     }, { rootMargin: '-20% 0px -70% 0px' });
