@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amity Coding Club — Learn. Code. Build.</title>
+<meta name="description" content="Amity Coding Club — a student community that learns by building, not just by studying." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=23">
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader" class="preloader">
+  <div class="preloader-logo-wrap">
+    <img src="https://avatars.githubusercontent.com/u/53072438?v=4" alt="ACC Logo" class="preloader-logo" />
+  </div>
+  <div class="preloader-bottom">
+    <div class="preloader-bar"><div class="preloader-progress" id="preloader-progress"></div></div>
+    <div class="preloader-counter" id="preloader-counter">0%</div>
+  </div>
+</div>
+
+<!-- custom cursor -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span class="cursor-text"></span></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo use-option-b">
+      <!-- OPTION A: Geometric ACC SVG (default — like Chartipedia) -->
+      <svg class="nav-logo-svg" id="nav-logo-svg" viewBox="0 0 152 46" xmlns="http://www.w3.org/2000/svg" aria-label="Amity Coding Club">
+        <!-- LETTER A -->
+        <g class="geo-A">
+          <path class="geo-a-body" fill-rule="evenodd" fill="#FDE047"
+            d="M22,2 L44,44 L32,44 L22,18 L12,44 L0,44 Z M8,30 L36,30 L36,24 L8,24 Z"/>
+          <circle class="geo-a-dot" cx="22" cy="3" r="4" fill="#EC4899"/>
+          <circle class="geo-a-accent" cx="22" cy="27" r="3.5" fill="#3B82F6"/>
+        </g>
+        <!-- LETTER C (first) -->
+        <g class="geo-C1" transform="translate(54,0)">
+          <path class="geo-c1-arc" d="M38,37 A18,18 0 1,0 38,9" stroke="#3B82F6" stroke-width="11" fill="none" stroke-linecap="round"/>
+          <circle class="geo-c1-dot" cx="38" cy="23" r="5" fill="#FDE047"/>
+        </g>
+        <!-- LETTER C (second) -->
+        <g class="geo-C2" transform="translate(114,0)">
+          <path class="geo-c2-arc" d="M38,37 A18,18 0 1,0 38,9" stroke="#8B5CF6" stroke-width="11" fill="none" stroke-linecap="round"/>
+          <rect class="geo-c2-rect" x="33" y="19" width="10" height="8" fill="#10B981"/>
+        </g>
+      </svg>
+      <!-- OPTION B: Full animated text (hidden — toggle class .use-option-b on .nav-logo to activate) -->
+      <img src="https://avatars.githubusercontent.com/u/53072438?v=4" alt="" class="nav-logo-img option-b-only" aria-hidden="true" />
+      <span class="nav-logo-text animated-name option-b-only" id="nav-logo-text">Amity Coding Club</span>
+    </a>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="#about" class="nav-link glitch-hover" data-text="About">About</a>
+      <a href="#events" class="nav-link glitch-hover" data-text="Events">Events</a>
+      <a href="#projects" class="nav-link glitch-hover" data-text="Projects">Projects</a>
+      <a href="#team" class="nav-link glitch-hover" data-text="Team">Team</a>
+      <a href="#contact" class="nav-link glitch-hover" data-text="Contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark and light mode">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#join" class="btn btn-primary nav-cta">Join the club</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <canvas id="hero-canvas" class="hero-canvas"></canvas>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Amity University &nbsp;·&nbsp; Student-run &nbsp;·&nbsp; Since 2019</p>
+    <h1 class="hero-title">
+      We don't study code.<br>
+      <span class="hero-title-accent text-outline-hover" data-text="We ship it.">We ship it.</span>
+    </h1>
+
+    <!-- THE RULE — manifesto callout -->
+    <div class="hero-rule">
+      <span class="hero-rule-label">THE ONLY RULE</span>
+      <div class="hero-rule-statement">
+        <span class="hero-rule-prefix">A club built on one rule —</span>
+        <span class="hero-rule-verb" id="hero-rule-verb">BUILD</span>
+        <span class="hero-rule-suffix">things.</span>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#join" class="btn btn-primary btn-lg">Join the club</a>
+      <a href="#projects" class="btn btn-ghost btn-lg">See what we've built</a>
+    </div>
+  </div>
+  <div class="hero-scroll-cue" aria-hidden="true">
+    <span></span>
+  </div>
+</section>
+
+<div class="marquee-divider" data-wave="1">
+  <div class="marquee-track">
+    <span>LEARN &bull; CODE &bull; BUILD &bull;</span>
+    <span>LEARN &bull; CODE &bull; BUILD &bull;</span>
+    <span>LEARN &bull; CODE &bull; BUILD &bull;</span>
+    <span>LEARN &bull; CODE &bull; BUILD &bull;</span>
+    <span>LEARN &bull; CODE &bull; BUILD &bull;</span>
+    <span>LEARN &bull; CODE &bull; BUILD &bull;</span>
+    <span>LEARN &bull; CODE &bull; BUILD &bull;</span>
+    <span>LEARN &bull; CODE &bull; BUILD &bull;</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="section-inner about-grid">
+    <div class="about-copy">
+      <div class="split-text-wrap" id="about-split-wrap">
+        <h2 class="section-title split-outline">A club built on<br>one rule:<br>build things.</h2>
+        <h2 class="section-title split-solid" aria-hidden="true">A club built on<br>one rule:<br>build things.</h2>
+      </div>
+      <p class="about-lead">
+        Amity Coding Club started as five people in a hostel room arguing about
+        whose code compiled first. Today we're a hundred-plus student
+        engineers, designers, and builders who'd rather ship a working demo
+        than sit through another slideshow.
+      </p>
+      <div class="about-points">
+        <div class="about-point">
+          <div class="about-point-icon" aria-hidden="true"><i class="ti ti-terminal-2"></i></div>
+          <div>
+            <h3>Learn by building</h3>
+            <p>Workshops end in a working repo, not a certificate.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-icon" aria-hidden="true"><i class="ti ti-bulb"></i></div>
+          <div>
+            <h3>Ideas over hierarchy</h3>
+            <p>First-years lead projects here just as often as seniors.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-icon" aria-hidden="true"><i class="ti ti-users-group"></i></div>
+          <div>
+            <h3>Community that ships</h3>
+            <p>Discord's always on. Someone's always debugging something.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual">
+      <div class="acc-logo-mark" id="acc-logo-mark">
+
+        <!-- Outer spinning ring -->
+        <svg class="acc-ring acc-ring--outer" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="188" stroke="currentColor" stroke-width="1" stroke-dasharray="8 14" opacity="0.4"/>
+          <circle cx="200" cy="200" r="160" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+        </svg>
+
+        <!-- Inner counter-spinning ring -->
+        <svg class="acc-ring acc-ring--inner" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="130" stroke="currentColor" stroke-width="1" stroke-dasharray="4 8" opacity="0.5"/>
+        </svg>
+
+        <!-- Core: ACC monogram -->
+        <div class="acc-logo-core">
+          <svg class="acc-monogram" viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- A -->
+            <path class="acc-letter" d="M 10 140 L 55 20 L 100 140 M 25 95 L 85 95" stroke="currentColor" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+            <!-- C (first) -->
+            <path class="acc-letter" d="M 165 30 C 140 30 110 50 110 80 C 110 110 140 140 165 140" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
+            <!-- C (second) -->
+            <path class="acc-letter" d="M 295 30 C 270 30 240 50 240 80 C 240 110 270 140 295 140" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
+          </svg>
+
+          <!-- Circuit node dots at letter terminals -->
+          <div class="acc-nodes">
+            <span class="acc-node" style="top:12%;left:29%"></span>
+            <span class="acc-node" style="top:58%;left:7%"></span>
+            <span class="acc-node" style="top:87%;left:5%"></span>
+            <span class="acc-node" style="top:87%;left:62%"></span>
+            <span class="acc-node" style="top:12%;left:51%"></span>
+            <span class="acc-node" style="top:12%;left:91%"></span>
+            <span class="acc-node" style="top:87%;left:92%"></span>
+          </div>
+
+          <!-- Scanning line -->
+          <div class="acc-scan-line"></div>
+        </div>
+
+        <!-- Wordmark below -->
+        <div class="acc-wordmark">
+          <span class="acc-wordmark-main">AMITY CODING CLUB</span>
+          <span class="acc-wordmark-sub">EST. 2020 &nbsp;·&nbsp; AMITY UNIVERSITY &nbsp;·&nbsp; BUILD. SHIP. REPEAT.</span>
+        </div>
+
+        <!-- Corner brackets (HUD decoration) -->
+        <div class="acc-bracket acc-bracket--tl"></div>
+        <div class="acc-bracket acc-bracket--tr"></div>
+        <div class="acc-bracket acc-bracket--bl"></div>
+        <div class="acc-bracket acc-bracket--br"></div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section stats" id="stats">
+  <div class="section-inner stats-grid" id="stats-grid">
+  </div>
+</section>
+
+<div class="marquee-divider flip" data-wave="2">
+  <div class="marquee-track">
+    <span>LATE NIGHTS &bull; EARLY DEPLOYS &bull;</span>
+    <span>LATE NIGHTS &bull; EARLY DEPLOYS &bull;</span>
+    <span>LATE NIGHTS &bull; EARLY DEPLOYS &bull;</span>
+    <span>LATE NIGHTS &bull; EARLY DEPLOYS &bull;</span>
+    <span>LATE NIGHTS &bull; EARLY DEPLOYS &bull;</span>
+    <span>LATE NIGHTS &bull; EARLY DEPLOYS &bull;</span>
+    <span>LATE NIGHTS &bull; EARLY DEPLOYS &bull;</span>
+    <span>LATE NIGHTS &bull; EARLY DEPLOYS &bull;</span>
+  </div>
+</div>
+
+<!-- EVENTS -->
+<section class="section events" id="events">
+    <div class="section-inner">
+      <div class="section-head" style="position: sticky; top: 100px; z-index: 50; padding-bottom: 20px; background: var(--bg);">
+        <h2 class="section-title text-outline-hover" data-text="What's happening">What's happening</h2>
+        <div class="events-tabs-container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+          <div class="events-tabs" role="tablist">
+            <button class="events-tab is-active" data-tab="ongoing" role="tab" aria-selected="true">Ongoing</button>
+            <button class="events-tab" data-tab="upcoming" role="tab" aria-selected="false">Upcoming</button>
+            <button class="events-tab" data-tab="past" role="tab" aria-selected="false">Past</button>
+          </div>
+          <div class="hacker-sticker" id="hacker-sticker" data-text="HAPPENING">HAPPENING</div>
+        </div>
+      </div>
+
+      <div class="events-track" id="events-ongoing" role="region" aria-label="Ongoing Events">
+      </div>
+
+      <div class="events-track" id="events-upcoming" role="region" aria-label="Upcoming Events">
+      </div>
+
+      <div class="events-track" id="events-past" role="region" aria-label="Past Events">
+      </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section projects" id="projects">
+  <div class="section-inner">
+    <h2 class="section-title text-outline-hover" data-text="Built by members">Built by members</h2>
+    <div class="projects-list" id="projects-list">
+    </div>
+    <div class="project-hover-img" id="project-hover-img"></div>
+  </div>
+</section>
+
+<div class="marquee-divider" data-wave="3">
+  <div class="marquee-track">
+    <span>FRONTEND &bull; BACKEND &bull; SYSTEMS &bull;</span>
+    <span>FRONTEND &bull; BACKEND &bull; SYSTEMS &bull;</span>
+    <span>FRONTEND &bull; BACKEND &bull; SYSTEMS &bull;</span>
+    <span>FRONTEND &bull; BACKEND &bull; SYSTEMS &bull;</span>
+    <span>FRONTEND &bull; BACKEND &bull; SYSTEMS &bull;</span>
+    <span>FRONTEND &bull; BACKEND &bull; SYSTEMS &bull;</span>
+    <span>FRONTEND &bull; BACKEND &bull; SYSTEMS &bull;</span>
+    <span>FRONTEND &bull; BACKEND &bull; SYSTEMS &bull;</span>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="section gallery" id="gallery">
+  <div class="section-inner">
+    <h2 class="section-title text-outline-hover" data-text="Moments">Moments</h2>
+    <div class="gallery-grid" id="gallery-grid">
+    </div>
+  </div>
+</section>
+
+<!-- TECH -->
+<section class="section tech" id="tech">
+  <div class="section-inner">
+    <div class="tech-header">
+      <!-- 3D Floating Stickers -->
+      <div class="tech-sticker tech-sticker-react">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React">
+      </div>
+      <div class="tech-sticker tech-sticker-python">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python">
+      </div>
+      <div class="tech-sticker tech-sticker-figma">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma">
+      </div>
+      <div class="tech-sticker tech-sticker-node">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js">
+      </div>
+
+      <h2 class="section-title text-outline-hover" data-text="What we build with">What we build with</h2>
+      <p class="section-sub">No stack worship here — we pick tools that ship, and teach whatever the project needs.</p>
+    </div>
+    <div class="tech-wall">
+      <div class="tech-row left">
+        <div class="tech-track">
+          <span class="tech-chip">JavaScript</span><span class="tech-chip">Python</span><span class="tech-chip">React</span><span class="tech-chip">Node.js</span><span class="tech-chip">Docker</span>
+          <span class="tech-chip">JavaScript</span><span class="tech-chip">Python</span><span class="tech-chip">React</span><span class="tech-chip">Node.js</span><span class="tech-chip">Docker</span>
+        </div>
+      </div>
+      <div class="tech-row right">
+        <div class="tech-track">
+          <span class="tech-chip">C++</span><span class="tech-chip">Next.js</span><span class="tech-chip">Figma</span><span class="tech-chip">PostgreSQL</span><span class="tech-chip">AWS</span>
+          <span class="tech-chip">C++</span><span class="tech-chip">Next.js</span><span class="tech-chip">Figma</span><span class="tech-chip">PostgreSQL</span><span class="tech-chip">AWS</span>
+        </div>
+      </div>
+      <div class="tech-row left fast">
+        <div class="tech-track">
+          <span class="tech-chip">TensorFlow</span><span class="tech-chip">Flutter</span><span class="tech-chip">Git</span><span class="tech-chip">GraphQL</span><span class="tech-chip">Redis</span>
+          <span class="tech-chip">TensorFlow</span><span class="tech-chip">Flutter</span><span class="tech-chip">Git</span><span class="tech-chip">GraphQL</span><span class="tech-chip">Redis</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section team" id="team">
+  <div class="section-inner">
+    <h2 class="section-title text-outline-hover" data-text="Who runs this">Who runs this</h2>
+    <div class="team-tabs" id="team-tabs">
+    </div>
+    <div class="team-grid" id="team-grid">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / CTA -->
+<section class="section cta-section" id="join">
+  <canvas id="cta-canvas" class="cta-canvas"></canvas>
+  <div class="section-inner cta-inner">
+    <h2 class="cta-title">
+      <span class="text-outline-hover" data-text="Stop reading about it.">Stop reading about it.</span><br>
+      <span class="text-outline-hover" data-text="Come build something.">Come build something.</span>
+    </h2>
+    <p class="cta-sub">No experience required — just curiosity and a laptop.</p>
+    <form class="cta-form" id="join-form">
+      <input type="email" required placeholder="you@college.edu" aria-label="Your email" />
+      <button type="submit" class="btn btn-primary">Get an invite</button>
+    </form>
+    <p class="cta-note" id="join-note" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <div class="section-inner footer-grid">
+    <div class="footer-brand">
+      <img src="https://avatars.githubusercontent.com/u/53072438?v=4" alt="ACC Logo" class="nav-logo-img" />
+      <span class="nav-logo-text">Amity Coding Club</span>
+      <p>Amity University campus, student activity center, room 214.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#projects">Projects</a>
+      <a href="#team">Team</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="https://discord.gg/EXBTsTcvt8">Discord</a>
+      <a href="https://www.linkedin.com/company/amity-coding-club/">LinkedIn</a>
+      <a href="https://www.instagram.com/amitycoding/">Instagram</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy policy</a>
+      <a href="#">Terms of service</a>
+    </div>
+  </div>
+  <div class="section-inner footer-bottom">
+    <p>&copy; 2026 Amity Coding Club. All rights reserved.</p>
+  </div>
+</footer>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/iconfont/tabler-icons.min.css">
+<!-- ACC BOT (Miss Minutes style) -->
+<div id="acc-bot" class="acc-bot" aria-hidden="true">
+  <div class="acc-bot-bubble" id="acc-bot-bubble"></div>
+  <div class="acc-bot-body" id="acc-bot-body">
+    <div class="acc-bot-screen">
+      <div class="acc-bot-eye"></div>
+      <div class="acc-bot-eye"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="data.js"></script>
+<script src="script.js?v=23"></script>
+</body>
+</html>
