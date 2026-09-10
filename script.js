@@ -526,7 +526,6 @@
                  '<span class="project-num">' + num + '</span>' +
                  '<h3 class="project-title-large">' + p.title + '</h3>' +
                  '<span class="project-tag-large">' + p.tag + '</span>' +
-                 '<img src="' + p.img + '" class="project-mobile-img" alt="' + p.title + '">' +
                '</div>';
       }).join('');
     }
@@ -905,104 +904,6 @@
     });
   }
 
-  /* ============ ACC BOT (MISS MINUTES STYLE) ============ */
-  function initAccBot() {
-    var bot = document.getElementById('acc-bot');
-    var bubble = document.getElementById('acc-bot-bubble');
-    if (!bot || !bubble || typeof gsap === 'undefined') return;
-
-    var botPhrases = [
-      "Are you actually reading this or just scrolling?",
-      "We ship code. What do you ship?",
-      "Don't forget to close your divs!",
-      "I was compiled today. I feel great.",
-      "There is a 99% chance of a merge conflict.",
-      "You look like someone who enjoys dark mode.",
-      "Is it a bug, or an undocumented feature?",
-      "I've been watching you scroll.",
-      "Tabs or Spaces? Don't answer that.",
-      "Hey! Stop looking at my source code.",
-      "CSS is awesome until it's not.",
-      "Time is a flat circle. So is my body.",
-      "Join the club. We have cookies."
-    ];
-
-    var isActive = false;
-    var scrollAccumulator = 0;
-    var lastScroll = window.scrollY;
-
-    function triggerBot() {
-      if (isActive) return;
-      isActive = true;
-
-      // Calculate random position (avoiding absolute center and absolute edges)
-      var isLeft = Math.random() > 0.5;
-      var isTop = Math.random() > 0.5;
-
-      bot.style.top = isTop ? (15 + Math.random() * 25) + 'vh' : 'auto';
-      bot.style.bottom = !isTop ? (15 + Math.random() * 25) + 'vh' : 'auto';
-      bot.style.left = isLeft ? (5 + Math.random() * 15) + 'vw' : 'auto';
-      bot.style.right = !isLeft ? (5 + Math.random() * 15) + 'vw' : 'auto';
-
-      // Adjust layout based on position so bubble points towards bot
-      bot.style.alignItems = isLeft ? 'flex-start' : 'flex-end';
-      bot.style.flexDirection = isTop ? 'column-reverse' : 'column';
-      
-      bubble.style.marginBottom = isTop ? '0' : '16px';
-      bubble.style.marginTop = isTop ? '16px' : '0';
-      
-      var radiusArr = ['12px', '12px', '12px', '12px'];
-      // Index: 0=top-left, 1=top-right, 2=bottom-right, 3=bottom-left
-      if (isTop && isLeft) radiusArr[0] = '0';
-      else if (isTop && !isLeft) radiusArr[1] = '0';
-      else if (!isTop && !isLeft) radiusArr[2] = '0';
-      else if (!isTop && isLeft) radiusArr[3] = '0';
-      bubble.style.borderRadius = radiusArr.join(' ');
-      
-      bubble.style.transformOrigin = (isTop ? 'top' : 'bottom') + ' ' + (isLeft ? 'left' : 'right');
-      bubble.textContent = botPhrases[Math.floor(Math.random() * botPhrases.length)];
-
-      bot.style.visibility = 'visible';
-      
-      // Animation Timeline
-      var tl = gsap.timeline();
-      
-      // Bot pops in
-      tl.to(bot, { opacity: 1, scale: 1, duration: 0.6, ease: 'elastic.out(1, 0.6)' })
-        // Look around (animate eyes)
-        .to('.acc-bot-eye', { x: isLeft ? 5 : -5, duration: 0.2, delay: 0.2 })
-        .to('.acc-bot-eye', { x: isLeft ? -2 : 2, duration: 0.2, delay: 0.4 })
-        .to('.acc-bot-eye', { x: 0, duration: 0.2, delay: 0.2 })
-        // Bubble pops out
-        .to(bubble, { opacity: 1, scale: 1, duration: 0.4, ease: 'back.out(1.5)' }, '-=0.2')
-        // Wait
-        .to({}, { duration: 4.5 })
-        // Outro
-        .to(bubble, { opacity: 0, scale: 0, duration: 0.2, ease: 'power2.in' })
-        .to(bot, { opacity: 0, scale: 0, duration: 0.3, ease: 'back.in(1.2)', 
-          onComplete: function() {
-            bot.style.visibility = 'hidden';
-            isActive = false;
-          }
-        });
-    }
-
-    // Monitor scrolling to trigger bot
-    window.addEventListener('scroll', function() {
-      var currentScroll = window.scrollY;
-      scrollAccumulator += Math.abs(currentScroll - lastScroll);
-      lastScroll = currentScroll;
-      
-      // If user has scrolled 2000px, 30% chance to trigger bot
-      if (!isActive && scrollAccumulator > 2000) {
-        if (Math.random() > 0.6) {
-          triggerBot();
-        }
-        scrollAccumulator = 0; // reset accumulator whether triggered or not
-      }
-    }, { passive: true });
-  }
-
   /* ============ INIT ============ */
   document.addEventListener('DOMContentLoaded', function () {
     renderData();
@@ -1011,7 +912,6 @@
     initAboutSplitText();
     initProjectHover();
     initPreloader();
-    initAccBot();
     initTheme();
     initNav();
     initCursor();

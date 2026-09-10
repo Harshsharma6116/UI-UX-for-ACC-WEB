@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=27">
+<link rel="stylesheet" href="styles.css?v=33">
 </head>
 <body>
 
@@ -129,94 +129,129 @@
 
 <!-- ABOUT -->
 <section class="section about" id="about">
-  <div class="section-inner about-grid">
-    <div class="about-copy">
-      <div class="split-text-wrap" id="about-split-wrap">
-        <h2 class="section-title split-outline">A club built on<br>one rule:<br>build things.</h2>
-        <h2 class="section-title split-solid" aria-hidden="true">A club built on<br>one rule:<br>build things.</h2>
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-copy">
+        <div class="split-text-wrap" id="about-split-wrap">
+          <h2 class="section-title split-outline">A club built on<br>one rule:<br>build things.</h2>
+          <h2 class="section-title split-solid" aria-hidden="true">A club built on<br>one rule:<br>build things.</h2>
+        </div>
+        <p class="about-lead">
+          Amity Coding Club is the official student-led developer collective at Amity University Madhya Pradesh. Born from the belief that students should never be left behind in a fast-evolving tech world, we empower builders to move past theory, write production code, and turn ideas into impactful real-world solutions.
+        </p>
+        <div class="about-points">
+          <div class="about-point">
+            <div class="about-point-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <div>
+              <h3>Community First</h3>
+              <p>Connecting 140+ engineers & designers through shared knowledge, code reviews, and late-night sprints.</p>
+            </div>
+          </div>
+          <div class="about-point">
+            <div class="about-point-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+            </div>
+            <div>
+              <h3>Hands-On Innovation</h3>
+              <p>Hackathons, prototyping sprints, and systems workshops that end in shipped production repos.</p>
+            </div>
+          </div>
+          <div class="about-point">
+            <div class="about-point-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"></line><line x1="10" y1="22" x2="14" y2="22"></line><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg>
+            </div>
+            <div>
+              <h3>Ideas Over Hierarchy</h3>
+              <p>First-years lead projects just as often as seniors. If your code compiles and solves the problem, it ships.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="about-lead">
-        Amity Coding Club started as five people in a hostel room arguing about
-        whose code compiled first. Today we're a hundred-plus student
-        engineers, designers, and builders who'd rather ship a working demo
-        than sit through another slideshow.
-      </p>
-      <div class="about-points">
-        <div class="about-point">
-          <div class="about-point-icon" aria-hidden="true"><i class="ti ti-terminal-2"></i></div>
-          <div>
-            <h3>Learn by building</h3>
-            <p>Workshops end in a working repo, not a certificate.</p>
+      <div class="about-visual">
+        <div class="acc-logo-mark" id="acc-logo-mark">
+
+          <!-- Outer spinning ring -->
+          <svg class="acc-ring acc-ring--outer" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="188" stroke="currentColor" stroke-width="1" stroke-dasharray="8 14" opacity="0.4"/>
+            <circle cx="200" cy="200" r="160" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+          </svg>
+
+          <!-- Inner counter-spinning ring -->
+          <svg class="acc-ring acc-ring--inner" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="130" stroke="currentColor" stroke-width="1" stroke-dasharray="4 8" opacity="0.5"/>
+          </svg>
+
+          <!-- Core: ACC monogram -->
+          <div class="acc-logo-core">
+            <svg class="acc-monogram" viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- A -->
+              <path class="acc-letter" d="M 10 140 L 55 20 L 100 140 M 25 95 L 85 95" stroke="currentColor" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+              <!-- C (first) -->
+              <path class="acc-letter" d="M 165 30 C 140 30 110 50 110 80 C 110 110 140 140 165 140" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
+              <!-- C (second) -->
+              <path class="acc-letter" d="M 295 30 C 270 30 240 50 240 80 C 240 110 270 140 295 140" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
+            </svg>
+
+            <!-- Circuit node dots at letter terminals -->
+            <div class="acc-nodes">
+              <span class="acc-node" style="top:12%;left:29%"></span>
+              <span class="acc-node" style="top:58%;left:7%"></span>
+              <span class="acc-node" style="top:87%;left:5%"></span>
+              <span class="acc-node" style="top:87%;left:62%"></span>
+              <span class="acc-node" style="top:12%;left:51%"></span>
+              <span class="acc-node" style="top:12%;left:91%"></span>
+              <span class="acc-node" style="top:87%;left:92%"></span>
+            </div>
+
+            <!-- Scanning line -->
+            <div class="acc-scan-line"></div>
           </div>
-        </div>
-        <div class="about-point">
-          <div class="about-point-icon" aria-hidden="true"><i class="ti ti-bulb"></i></div>
-          <div>
-            <h3>Ideas over hierarchy</h3>
-            <p>First-years lead projects here just as often as seniors.</p>
+
+          <!-- Wordmark below -->
+          <div class="acc-wordmark">
+            <span class="acc-wordmark-main">AMITY CODING CLUB</span>
+            <span class="acc-wordmark-sub">EST. 2020 &nbsp;·&nbsp; AMITY UNIVERSITY &nbsp;·&nbsp; LEARN. CODE. BUILD.</span>
           </div>
-        </div>
-        <div class="about-point">
-          <div class="about-point-icon" aria-hidden="true"><i class="ti ti-users-group"></i></div>
-          <div>
-            <h3>Community that ships</h3>
-            <p>Discord's always on. Someone's always debugging something.</p>
-          </div>
+
+          <!-- Corner brackets (HUD decoration) -->
+          <div class="acc-bracket acc-bracket--tl"></div>
+          <div class="acc-bracket acc-bracket--tr"></div>
+          <div class="acc-bracket acc-bracket--bl"></div>
+          <div class="acc-bracket acc-bracket--br"></div>
+
         </div>
       </div>
     </div>
-    <div class="about-visual">
-      <div class="acc-logo-mark" id="acc-logo-mark">
 
-        <!-- Outer spinning ring -->
-        <svg class="acc-ring acc-ring--outer" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="200" cy="200" r="188" stroke="currentColor" stroke-width="1" stroke-dasharray="8 14" opacity="0.4"/>
-          <circle cx="200" cy="200" r="160" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
-        </svg>
-
-        <!-- Inner counter-spinning ring -->
-        <svg class="acc-ring acc-ring--inner" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="200" cy="200" r="130" stroke="currentColor" stroke-width="1" stroke-dasharray="4 8" opacity="0.5"/>
-        </svg>
-
-        <!-- Core: ACC monogram -->
-        <div class="acc-logo-core">
-          <svg class="acc-monogram" viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- A -->
-            <path class="acc-letter" d="M 10 140 L 55 20 L 100 140 M 25 95 L 85 95" stroke="currentColor" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
-            <!-- C (first) -->
-            <path class="acc-letter" d="M 165 30 C 140 30 110 50 110 80 C 110 110 140 140 165 140" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
-            <!-- C (second) -->
-            <path class="acc-letter" d="M 295 30 C 270 30 240 50 240 80 C 240 110 270 140 295 140" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
-          </svg>
-
-          <!-- Circuit node dots at letter terminals -->
-          <div class="acc-nodes">
-            <span class="acc-node" style="top:12%;left:29%"></span>
-            <span class="acc-node" style="top:58%;left:7%"></span>
-            <span class="acc-node" style="top:87%;left:5%"></span>
-            <span class="acc-node" style="top:87%;left:62%"></span>
-            <span class="acc-node" style="top:12%;left:51%"></span>
-            <span class="acc-node" style="top:12%;left:91%"></span>
-            <span class="acc-node" style="top:87%;left:92%"></span>
+    <!-- Institutional Vision Card: From the Cabin of HOI -->
+    <div class="about-hoi-card reveal">
+      <div class="about-hoi-image-wrap">
+        <img src="https://res.cloudinary.com/dy4aegde9/image/upload/c_limit,w_800/f_auto/q_auto/v1/mainImg" alt="Amity University Madhya Pradesh Campus" class="about-hoi-img" loading="lazy" />
+        <div class="about-hoi-tag">AUMP CAMPUS</div>
+      </div>
+      <div class="about-hoi-content">
+        <div class="about-hoi-header">
+          <span class="about-hoi-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            INSTITUTIONAL VISION
+          </span>
+          <span class="about-hoi-sub">FROM THE CABIN OF HOI</span>
+        </div>
+        <blockquote class="about-hoi-quote">
+          "At Amity Coding Club, we believe that innovation and collaboration are the cornerstones of success in today’s fast-evolving tech world. The Head of Institution encourages every student to explore, learn, and create without limits, fostering a culture where ideas turn into impactful solutions."
+        </blockquote>
+        <div class="about-hoi-footer">
+          <div>
+            <div class="about-hoi-author">Head of Institution</div>
+            <div class="about-hoi-role">Amity University Madhya Pradesh, Gwalior</div>
           </div>
-
-          <!-- Scanning line -->
-          <div class="acc-scan-line"></div>
+          <div class="about-hoi-badges">
+            <span class="about-hoi-badge">ASET-CSE</span>
+            <span class="about-hoi-badge">INNOVATION</span>
+          </div>
         </div>
-
-        <!-- Wordmark below -->
-        <div class="acc-wordmark">
-          <span class="acc-wordmark-main">AMITY CODING CLUB</span>
-          <span class="acc-wordmark-sub">EST. 2020 &nbsp;·&nbsp; AMITY UNIVERSITY &nbsp;·&nbsp; BUILD. SHIP. REPEAT.</span>
-        </div>
-
-        <!-- Corner brackets (HUD decoration) -->
-        <div class="acc-bracket acc-bracket--tl"></div>
-        <div class="acc-bracket acc-bracket--tr"></div>
-        <div class="acc-bracket acc-bracket--bl"></div>
-        <div class="acc-bracket acc-bracket--br"></div>
-
       </div>
     </div>
   </div>
@@ -362,12 +397,12 @@
   <div class="section-inner cta-inner">
     <h2 class="cta-title">
       <span class="text-outline-hover" data-text="Stop reading about it.">Stop reading about it.</span><br>
-      <span class="text-outline-hover" data-text="Come build something.">Come build something.</span>
+      <span class="cta-title-solid">Come build something.</span>
     </h2>
     <p class="cta-sub">No experience required — just curiosity and a laptop.</p>
     <form class="cta-form" id="join-form">
       <input type="email" required placeholder="you@college.edu" aria-label="Your email" />
-      <button type="submit" class="btn btn-primary">Get an invite</button>
+      <button type="submit" class="cta-submit-btn">Get an invite</button>
     </form>
     <p class="cta-note" id="join-note" aria-live="polite"></p>
   </div>
@@ -377,50 +412,66 @@
 <footer class="footer" id="contact">
   <div class="section-inner footer-grid">
     <div class="footer-brand">
-      <img src="https://avatars.githubusercontent.com/u/53072438?v=4" alt="ACC Logo" class="nav-logo-img" />
-      <span class="nav-logo-text">Amity Coding Club</span>
-      <p>Amity University campus, student activity center, room 214.</p>
+      <div class="footer-logo-row">
+        <img src="https://res.cloudinary.com/dy4aegde9/image/upload/c_limit,w_256/f_auto/q_auto/v1/logo" alt="ACC Logo" class="footer-logo-img" />
+        <span class="nav-logo-text">Amity Coding Club</span>
+      </div>
+      <p class="footer-address">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        Opposite Airport, Maharajpura, Gwalior, MP 474005
+      </p>
+      <p class="footer-email">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><polyline points="3 7 12 13 21 7"></polyline></svg>
+        <a href="mailto:amitycodingclub@gmail.com">amitycodingclub@gmail.com</a>
+      </p>
     </div>
     <div class="footer-col">
       <h4>Explore</h4>
       <a href="#about">About</a>
       <a href="#events">Events</a>
+      <a href="#gallery">Gallery</a>
       <a href="#projects">Projects</a>
       <a href="#team">Team</a>
     </div>
     <div class="footer-col">
-      <h4>Connect</h4>
-      <a href="https://discord.gg/EXBTsTcvt8">Discord</a>
-      <a href="https://www.linkedin.com/company/amity-coding-club/">LinkedIn</a>
-      <a href="https://www.instagram.com/amitycoding/">Instagram</a>
+      <h4>Community</h4>
+      <div class="footer-social-icons">
+        <a href="https://chat.whatsapp.com/HjblNeV7Qhs6lTyTs04OXk" target="_blank" rel="noopener noreferrer" class="social-icon-btn whatsapp" aria-label="WhatsApp Community" title="WhatsApp Community">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg>
+        </a>
+        <a href="https://discord.gg/EXBTsTcvt8" target="_blank" rel="noopener noreferrer" class="social-icon-btn discord" aria-label="Discord Server" title="Discord Server">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/amitycodingclub/" target="_blank" rel="noopener noreferrer" class="social-icon-btn instagram" aria-label="Instagram" title="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/amity-coding-club" target="_blank" rel="noopener noreferrer" class="social-icon-btn linkedin" aria-label="LinkedIn" title="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.99 0-1.8-.81-1.8-1.8 0-.99.81-1.8 1.8-1.8.99 0 1.8.81 1.8 1.8 0 .99-.81 1.8-1.8 1.8m1.39 10.74V9.97H5.07v9.53h2.78z"/></svg>
+        </a>
+        <a href="https://twitter.com/amitycodingclub" target="_blank" rel="noopener noreferrer" class="social-icon-btn x-twitter" aria-label="X (Twitter)" title="X (Twitter)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
     </div>
     <div class="footer-col">
       <h4>Legal</h4>
       <a href="#">Privacy policy</a>
       <a href="#">Terms of service</a>
+      <div class="footer-status-tag">
+        <span class="pulse-dot"></span> Active Community
+      </div>
     </div>
   </div>
   <div class="section-inner footer-bottom">
     <p>&copy; 2026 Amity Coding Club. All rights reserved.</p>
+    <p class="footer-bottom-motto">Learn &bull; Code &bull; Build</p>
   </div>
 </footer>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/iconfont/tabler-icons.min.css">
-<!-- ACC BOT (Miss Minutes style) -->
-<div id="acc-bot" class="acc-bot" aria-hidden="true">
-  <div class="acc-bot-bubble" id="acc-bot-bubble"></div>
-  <div class="acc-bot-body" id="acc-bot-body">
-    <div class="acc-bot-screen">
-      <div class="acc-bot-eye"></div>
-      <div class="acc-bot-eye"></div>
-    </div>
-  </div>
-</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="data.js"></script>
-<script src="script.js?v=28"></script>
+<script src="script.js?v=33"></script>
 </body>
 </html>
