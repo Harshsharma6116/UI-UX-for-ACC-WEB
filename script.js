@@ -512,9 +512,11 @@
       // Render Gallery
       var galleryGrid = document.getElementById('gallery-grid');
       if (galleryGrid && ACC_DATA.gallery) {
-        galleryGrid.innerHTML = ACC_DATA.gallery.map(function(item) {
+        var html = '<div class="gallery-item bento-hero"><span class="bento-text">Happenings<br>at ACC</span></div>';
+        html += ACC_DATA.gallery.map(function(item) {
           return '<div class="gallery-item"><img src="' + item.img + '" alt="' + item.caption + '"><div class="gallery-caption">' + item.caption + '</div></div>';
         }).join('');
+        galleryGrid.innerHTML = html;
       }
 
     // Render Projects
@@ -602,6 +604,36 @@
             }
           });
         });
+      }
+    }
+  }
+
+  /* ============ SMOOTH SCROLL (LENIS) ============ */
+  function initLenis() {
+    if (typeof Lenis !== 'undefined') {
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        smoothTouch: false,
+        touchMultiplier: 2
+      });
+
+      // Integrate with GSAP ScrollTrigger if available
+      if (typeof ScrollTrigger !== 'undefined') {
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add(function (time) {
+          lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0, 0);
+      } else {
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
       }
     }
   }
@@ -906,6 +938,7 @@
 
   /* ============ INIT ============ */
   document.addEventListener('DOMContentLoaded', function () {
+    initLenis();
     renderData();
     initAnimatedName();
     initRuleVerb();
